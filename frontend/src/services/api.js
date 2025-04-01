@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://dropout-9d55.onrender.com';
+const API_URL = 'https://student-dropout-a5to.onrender.com';
 
 export const uploadTrainData = async (file) => {
   const formData = new FormData();
