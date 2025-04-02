@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://student-dropout-a5to.onrender.com';
+const API_URL = 'https://studentdropout-qugy2gmua-mkangabires-projects.vercel.app';
 
 export const uploadTrainData = async (file) => {
   const formData = new FormData();
