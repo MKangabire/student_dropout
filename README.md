@@ -67,7 +67,7 @@ This project implements a machine learning pipeline for predicting student perfo
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/eobolo/ml_pipeline.git
+git clone https://github.com/MKangabire/student_dropout.git
 cd ml_pipeline
 ```
 
@@ -95,23 +95,22 @@ cp .env.example .env
 
 1. Start the FastAPI server:
 ```bash
-uvicorn app:app --host 0.0.0.0 --port 8000
+uvicorn src.api.main:app --host 0.0.0.0 --port 8000
 ```
 
 2. Access the following endpoints:
 - API Documentation: `http://localhost:8000/docs`
 - Web Interface: `http://localhost:8000`
-- Health Check: `http://localhost:8000/health`
 
 ### Running with Docker
 1. Build the Docker image:
 ```bash
-docker build -t my-ml-app .
+docker build -t student_dropout .
 ```
 
 2. Run the container:
 ```bash
-docker run -p 5000:5000 my-ml-app
+docker run -p 5000:5000 student_dropout
 ```
 
 The application will be available at `http://localhost:5000`
@@ -130,19 +129,9 @@ I conducted load testing on my model's `/api/predict` endpoint using Locust to e
 ### Running Locust Tests
 To run the load tests locally:
 ```bash
-locust -f locust_latency.py --host=https://ml-pipeline-le2q.onrender.com
+locust -f locust_latency.py --host=https://student-drop-out.onrender.com/
 ```
 
-### Test Results and Analysis
-
-#### Key Performance Metrics
-- Total Requests: 169
-- Failures: 4 (2.37% failure rate)
-- Median Response Time: 44,000 ms (44 seconds)
-- Average Response Time: 41,785 ms (42 seconds)
-- Minimum Response Time: 1,806 ms (1.8 seconds)
-- Maximum Response Time: 67,773 ms (68 seconds)
-- Requests per Second (RPS): 0.4
 
 #### Detailed Observations
 
