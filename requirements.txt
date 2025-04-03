@@ -62,7 +62,7 @@ pydantic_core==2.33.0
 Pygments==2.19.1
 pymongo==4.11.3
 pyparsing==3.2.3
-python==3.10
+python
 python-dateutil==2.9.0.post0
 python-multipart==0.0.20
 pytz==2025.1

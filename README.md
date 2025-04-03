@@ -141,20 +141,22 @@ locust -f locust_latency.py --host=https://ml-pipeline-le2q.onrender.com
 ![Locust Performance Metrics](response.png)
 *Figure 2: Detailed performance statistics from load testing*
 
-- The median response time of 44 seconds indicates that half of all requests took at least this long to process
-- While some requests were handled quickly (minimum 1.8 seconds), others experienced severe delays (up to 68 seconds)
-- Response times remained consistently high throughout the test, with the 95th percentile fluctuating between 40-60 seconds
-- The system struggled to maintain consistent throughput, averaging only 0.4 RPS
-- Initial failure spike at test start, but stabilized later
-- System showed signs of being overwhelmed with 30 concurrent users
-- Response times remained high throughout the test duration
+This chart shows response times (in milliseconds) over time for a system under load testing.
 
-#### Conclusions
-The single-container deployment showed significant performance limitations:
-- High latency (44s median, 42s average) indicates processing bottlenecks
-- Low throughput (0.4 RPS) suggests the container couldn't handle the load
-- 2.37% failure rate indicates reliability issues, especially during initial load
-- These results suggest the need for container scaling or performance optimization
+Two key percentiles are tracked:
 
-## Acknowledgments
-- Dataset source: [Higher Education Students Performance Evaluation](https://www.kaggle.com/datasets/csafrit2/higher-education-students-performance-evaluation?select=student_prediction.csv)
+50th percentile (median) → (orange) Represents the typical response time for half of the requests.
+
+95th percentile → (purple) Indicates the upper range where most (95%) of responses fall under.
+
+Observations:
+
+Initially, response times were low and stable (~11ms for the 50th percentile).
+
+Over time, response times gradually increased, indicating performance degradation as load increased.
+
+Around 2:20 PM, there was a spike, suggesting a potential bottleneck or increased load affecting response times.
+
+
+## References
+- Dataset source: [Student Dropout Analysis and Prediction](https://www.kaggle.com/datasets/abdullah0a/student-dropout-analysis-and-prediction-dataset?resource=download)
