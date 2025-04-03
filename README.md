@@ -21,18 +21,31 @@ This project implements a machine learning pipeline for predicting student perfo
 ## Project Structure
 ```
 .
-├── app.py              # FastAPI application with API endpoints
-├── pipeline.py         # ML pipeline implementation for training and prediction
-├── generate_data.py    # Synthetic data generation for testing
-├── models/            # Directory containing trained model artifacts
-├── src/               # Source code modules
-│   ├── preprocessing/  # Data preprocessing utilities
-│   ├── training/      # Model training scripts
-│   └── evaluation/    # Model evaluation metrics
-├── notebook/          # Jupyter notebooks for analysis
-├── data/              # Data storage directory
-├── static/            # Static files for web interface
-└── template/          # HTML templates for web pages
+├── data/               # Data directory for storing raw and processed datasets
+├── dataset/            # Directory for specific dataset files or models
+├── models/             # Trained models and artifacts
+├── node_modules/       # Node.js dependencies (if using Node.js)
+├── notebook/           # Jupyter notebooks for analysis and experimentation
+├── src/                # Source code for the application
+│   ├── preprocessing/  # Data preprocessing modules
+│   ├── training/       # Model training scripts
+│   └── evaluation/     # Model evaluation scripts
+├── static/             # Static files for web interface (images, CSS, etc.)
+├── __pycache__/        # Python bytecode files (automatically generated)
+├── docker-compose.yml  # Docker Compose configuration for multi-container setups
+├── Dockerfile          # Dockerfile for containerizing the app
+├── Dockerfile.locust   # Locust Dockerfile for load testing
+├── latency.png         # Image file for latency visualization (or graph)
+├── locustfile.py       # Script for load testing using Locust
+├── README.md           # Project description and instructions
+├── requirements.txt    # List of Python dependencies
+├── response.png        # Image file for response time visualization (or graph)
+├── split_data.py       # Data splitting script (e.g., train/test split)
+├── test_pipeline.py    # Unit tests for the machine learning pipeline
+├── package-lock.json   # npm lock file (if using Node.js)
+├── package.json        # npm package definition (if using Node.js)
+└── yarn.lock           # Yarn lock file (if using Yarn package manager)
+
 ```
 
 ## Technical Stack
