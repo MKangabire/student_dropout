@@ -134,11 +134,11 @@ locust -f locust_latency.py --host=https://ml-pipeline-le2q.onrender.com
 #### Detailed Observations
 
 ##### Latency and Response Times
-![Locust Test Results](locustgraph.png)
+![Locust Test Results](latency.png)
 *Figure 1: Response time distribution and RPS over time*
 
 ##### Performance Metrics
-![Locust Performance Metrics](locusttable.png)
+![Locust Performance Metrics](response.png)
 *Figure 2: Detailed performance statistics from load testing*
 
 - The median response time of 44 seconds indicates that half of all requests took at least this long to process
