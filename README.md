@@ -7,7 +7,7 @@ This project implements a machine learning pipeline for predicting student perfo
 [Student dropout](https://ml-pipeline-le2q.onrender.com/)
 
 ## video link
-[youtube-video](https://youtu.be/WEx--V41hyk)
+[youtube-video](https://youtu.be/DyDCOaVwEJQ)
 
 ## Features
 - Data preprocessing and feature engineering pipeline
