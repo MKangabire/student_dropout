@@ -1,7 +1,7 @@
 # Higher Education Student Performance Prediction System Pipe Line
 
 ## Overview
-This project implements a machine learning pipeline for predicting student performance in higher education. The system uses historical student data to predict academic outcomes, helping educational institutions identify students who might need additional support or intervention.
+This project develops a machine learning pipeline to predict student dropout rates in higher education. Using historical student data—like grades, study time, and past failures—it aims to identify students at risk of dropping out, empowering schools to offer timely support and boost retention.
 
 ## Live demo site
 [Student dropout](https://ml-pipeline-le2q.onrender.com/)
