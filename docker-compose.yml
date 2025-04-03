@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    deploy:
+      replicas: 1  # Start with 1 container; we'll scale later
+
+  locust:
+    build:
+      context: .
+      dockerfile: Dockerfile.locust
+    ports:
+      - "8089:8089"  # Locust web UI
+    depends_on:
+      - fastapi

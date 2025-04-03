@@ -1,0 +1,242 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+    color: #2d3748;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #1a202c;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #4a5568;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Form Styles */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-inline {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.file-input, .select-input, input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease;
+}
+
+.file-input:focus, .select-input:focus, input:focus {
+    border-color: #3182ce;
+    outline: none;
+}
+
+label {
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.primary-btn {
+    background-color: #3182ce;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #2b6cb0;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: #718096;
+    color: white;
+    margin-right: 10px;
+}
+
+.secondary-btn:hover {
+    background-color: #5a6779;
+    transform: translateY(-2px);
+}
+
+.button-group {
+    margin: 20px 0;
+}
+
+/* Results and Visualizations */
+.result-box {
+    margin-top: 15px;
+    padding: 10px;
+    background: #edf2f7;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #2d3748;
+    white-space: pre-wrap;
+}
+
+.visualization-box {
+    margin-top: 20px;
+    text-align: center;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.visualization-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    transition: opacity 0.3s ease;
+}
+
+.visualization-img.visible {
+    display: block;
+    opacity: 1;
+}
+
+.visualization-text {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
+.eval-section {
+    margin-top: 20px;
+}
+
+.eval-section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+th {
+    background: #3182ce;
+    color: white;
+    font-weight: 600;
+}
+
+td {
+    background: #f7fafc;
+    color: #2d3748;
+}
+
+.confusion-matrix {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.confusion-cell {
+    padding: 15px;
+    background: #edf2f7;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.confusion-cell:nth-child(1), .confusion-cell:nth-child(4) {
+    background: #68d391; /* True positives/negatives */
+}
+
+.confusion-cell:nth-child(2), .confusion-cell:nth-child(3) {
+    background: #fc8181; /* False positives/negatives */
+}

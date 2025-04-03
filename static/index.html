@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dropout Prediction</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link type="image/x-icon" rel="shortcut icon" href="https://cdn.prod.website-files.com/678cf6b9ec8afcb96a1835c0/67a2a85fd97f009fdeea8bec_Emmanuel%20Logo.svg">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Student Dropout Prediction</h1>
+            <p class="subtitle">Analyze and predict student dropout risk with ease</p>
+        </header>
+
+        <!-- Upload Data -->
+        <section class="card">
+            <h2><span class="icon">📤</span> Upload Training Data</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="file-upload" accept=".csv" class="file-input" required>
+                <button type="submit" class="btn primary-btn">Upload</button>
+            </form>
+            <div id="upload-result" class="result-box"></div>
+        </section>
+
+        <!-- Predict Dropout -->
+        <section class="card">
+            <h2><span class="icon">🎯</span> Predict Dropout</h2>
+            <form id="prediction-form" class="form-grid">
+                <!-- Dynamically populated by JS -->
+            </form>
+            <button id="predict-button" class="btn primary-btn">Predict</button>
+            <div id="prediction-result" class="result-box"></div>
+        </section>
+
+        <!-- Visualize Features -->
+        <section class="card">
+            <h2><span class="icon">📊</span> Visualize Features</h2>
+            <form id="visualization-form" class="form-inline">
+                <label for="feature-name">Select Feature:</label>
+                <select id="feature-name" class="select-input">
+                    <option value="Grade_1">Grade 1</option>
+                    <option value="Study_Time">Study Time</option>
+                    <option value="Number_of_Failures">Number of Failures</option>
+                </select>
+                <button type="submit" class="btn primary-btn">Generate</button>
+            </form>
+            <div id="visualization-result" class="visualization-box">
+                <img id="visualization-image" src="" alt="Feature Visualization" class="visualization-img" style="display: none;">
+                <p id="visualization-text" class="visualization-text"></p>
+            </div>
+        </section>
+
+        <!-- Model Management -->
+        <section class="card">
+            <h2><span class="icon">⚙️</span> Model Management</h2>
+            <div class="button-group">
+                <button id="retrain-button" class="btn secondary-btn">Retrain Model</button>
+                <button id="evaluate-button" class="btn secondary-btn">Evaluate Model</button>
+            </div>
+            <div id="retrain-result" class="result-box"></div>
+            <div id="evaluate-result" class="result-box">
+                <div id="classification-report" class="eval-section"></div>
+                <div id="confusion-matrix" class="eval-section"></div>
+                <div id="prediction-summary" class="eval-section"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>

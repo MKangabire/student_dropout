@@ -14,9 +14,11 @@ from .database import save_to_mongo, fetch_from_mongo  # Relative import
 from ..preprocessing import preprocess_training_data, preprocess_prediction_data  # Relative import
 from ..model import retrain_model, evaluate_model  # Relative import
 from ..prediction import make_predictions  # Relative import
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 app = FastAPI()
-
+app.mount("/static", StaticFiles(directory="static"), name="static")
 # Add CORS middleware to allow frontend requests
 app.add_middleware(
     CORSMiddleware,
@@ -56,6 +58,10 @@ MAPPING_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "models", "ca
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "models", "model.keras")
 os.makedirs(TRAIN_DIR, exist_ok=True)
 os.makedirs(TEST_DIR, exist_ok=True)
+
+@app.get("/")
+async def read_index():
+    return FileResponse('static/index.html')
 
 # Existing /upload_train_data endpoint
 @app.post("/upload_train_data")

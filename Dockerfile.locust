@@ -1,0 +1,4 @@
+FROM locustio/locust
+WORKDIR /locust
+COPY locustfile.py .
+CMD ["locust", "--host=http://fastapi:8000"]
